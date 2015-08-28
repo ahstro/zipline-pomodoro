@@ -1,0 +1,35 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-size: 16px;
+     height: 100%;
+}
+
+body {
+    background-color: #222;
+     justify-content: center;
+         align-items: center;
+         font-family: 'GlacialIndifferenceRegular', 'Lato', sans-serif;
+             display: flex;
+               color: #eee;
+}
+
+#timer {
+  justify-content: center;
+    border-radius: 50%;
+      align-items: center;
+        font-size: 3rem;
+          display: flex;
+           border: .2rem solid #eee;
+           cursor: pointer;
+           height: 20rem;
+            width: 20rem;
+}  
+
+/* TODO */
+#timer::selection {
+  background-color: inherit;
+             color: inherit;
+}
