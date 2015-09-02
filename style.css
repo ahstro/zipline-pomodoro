@@ -10,26 +10,62 @@ html, body {
 body {
     background-color: #222;
      justify-content: center;
+      flex-direction: column;
          align-items: center;
-         font-family: 'GlacialIndifferenceRegular', 'Lato', sans-serif;
+         font-family: 'FantasqueSansMonoRegular', sans-serif;
+           font-size: 2rem;
              display: flex;
                color: #eee;
 }
 
+div {
+  cursor: pointer;
+}
+
 #timer {
-  justify-content: center;
+  justify-content: space-around;
+   flex-direction: column;
     border-radius: 50%;
       align-items: center;
-        font-size: 3rem;
           display: flex;
            border: .2rem solid #eee;
-           cursor: pointer;
+           /* cursor: pointer; */
            height: 20rem;
             width: 20rem;
 }  
 
-/* TODO */
-#timer::selection {
+.big-text {
+  font-size: 5rem;
+}
+
+#buttons {
+  justify-content: center;
+          display: flex;
+           margin: 1rem;
+            width: 20rem;
+}
+
+#buttons > * {
+  justify-content: center;
+       flex-basis: 0;
+        flex-grow: 1;
+          display: flex;
+}
+
+.timeControl {
+  display: flex;
+}
+
+.timeControl > * {
+  padding: 0 .1rem;
+}
+
+::-moz-selection {
+  background-color: inherit;
+             color: inherit;
+}
+
+::selection {
   background-color: inherit;
              color: inherit;
 }
