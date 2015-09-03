@@ -29,11 +29,10 @@ div {
    flex-direction: column;
     border-radius: 50%;
       align-items: center;
+       min-height: 20rem;
+        min-width: 20rem;
           display: flex;
            border: .2rem solid #eee;
-           /* cursor: pointer; */
-           height: 20rem;
-            width: 20rem;
 }  
 
 .big-text {
@@ -42,8 +41,8 @@ div {
 
 #buttons {
   justify-content: center;
+       margin-top: 1rem;
           display: flex;
-           margin: 1rem;
             width: 20rem;
 }
 
@@ -70,4 +69,51 @@ div {
 ::selection {
   background-color: inherit;
              color: inherit;
+}
+
+@media (max-height: 24rem), (max-width: 20rem) {
+  #timer {
+    min-height: 15rem;
+     min-width: 15rem;
+  }
+
+  .big-text {
+    font-size: 3rem;
+  }
+
+  #buttons {
+    width: 15rem;
+  }
+}
+
+@media (max-height: 19rem) {
+  #buttons {
+    display: none;
+  }
+}
+
+@media (max-height: 15rem), (max-width: 15rem) {
+  #tomato,
+  #statusIcon {
+    display: none;
+  }
+
+  #timer {
+    min-height: 10rem;
+     min-width: 10rem;
+  }
+
+  #buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-height: 10rem), (max-width: 10rem) {
+  #timer {
+    border: none;
+  }
+
+  .big-text {
+    font-size: 2rem;
+  }
 }
