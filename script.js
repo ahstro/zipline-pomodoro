@@ -14,18 +14,27 @@ function toggleStatusIcon (pause) {
   else window.statusIcon.innerHTML = '▶'
 }
 
+function working () {
+  return window.tomato.innerHTML === 'Work'
+}
+
 function soundAlarm () {
   window.alarm.play()
 
+  var body
+
+  if (working()) body = "Good job!\nIt's time for a break."
+  else body = "Break's over!\nTime to get back to work."
+
   if (window.Notification.permission === 'granted') {
-    var notify = new window.Notification('Pomodoro', { body: 'Time to switch!' })
+    var notify = new window.Notification('Pomodoro', { body: body })
   }
 
   console.log(notify)
 }
 
 function toggleType (type) {
-  if (type === 'Work') {
+  if (working()) {
     activeTime = breakTimeSec
     window.tomato.innerHTML = 'Break'
   } else {
@@ -47,7 +56,7 @@ function toggleActive () {
       activeTime--
 
       if (activeTime === 0) soundAlarm()
-      if (activeTime < 0) toggleType(window.tomato.innerHTML)
+      if (activeTime < 0) toggleType()
 
       renderTime(activeTime)
     }, 1000)
@@ -62,7 +71,7 @@ function resetTimer () {
 
   if (pomodoro) clearPomodoro()
 
-  toggleType('hamburgers')
+  if (!working()) toggleType()
   toggleStatusIcon(false)
   renderTime(activeTime)
 }
