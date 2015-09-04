@@ -1,0 +1,131 @@
+$max-side: 20rem;
+$mid-side: 15rem;
+$min-side: 10rem;
+$bg-color: #222;
+$fg-color: #eee;
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+     height: 100%;
+}
+
+body {
+  @extend .flex-center;
+  background-color: $bg-color;
+    flex-direction: column;
+       align-items: center;
+       font-family: 'FantasqueSansMonoRegular', sans-serif;
+         font-size: 2rem;
+            margin: 0;
+            height: 100%;
+             color: $fg-color;
+}
+
+div {
+  cursor: pointer;
+}
+
+#timer {
+  justify-content: space-around;
+   flex-direction: column;
+    border-radius: 50%;
+      align-items: center;
+       min-height: $max-side;
+        min-width: $max-side;
+          display: flex;
+           border: .2rem solid $fg-color;
+}
+
+.big-text {
+  font-size: 5rem;
+}
+
+#buttons {
+  @extend .flex-center;
+  margin-top: 1rem;
+       width: $max-side;
+}
+
+#buttons > * {
+  @extend .flex-center;
+  flex-basis: 0;
+   flex-grow: 1;
+}
+
+.timeControl {
+  display: flex;
+}
+
+.timeControl > * {
+  padding: 0 .1rem;
+}
+
+::-moz-selection {
+  background-color: $bg-color;
+             color: $fg-color;
+}
+
+::selection {
+  background-color: rgba($bg-color, 0.9);
+             color: $fg-color;
+}
+
+@media (max-height: 24rem), (max-width: $max-side) {
+  #timer {
+    min-height: $mid-side;
+     min-width: $mid-side;
+  }
+
+  .big-text {
+    font-size: 3rem;
+  }
+
+  #buttons {
+    width: $mid-side;
+  }
+}
+
+@media (max-height: 19rem) {
+  #buttons {
+    display: none;
+  }
+}
+
+@media (max-height: $mid-side), (max-width: $mid-side) {
+  #tomato,
+  #statusIcon {
+    display: none;
+  }
+
+  #timer {
+    min-height: $min-side;
+     min-width: $min-side;
+  }
+
+  #buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-height: $min-side), (max-width: $min-side) {
+  #timer {
+    border: none;
+  }
+
+  .big-text {
+    font-size: 2rem;
+  }
+}
+
+
+/* Auxiliary classes, used for Sass */
+
+.flex-center {
+  justify-content: center;
+          display: flex;
+}
