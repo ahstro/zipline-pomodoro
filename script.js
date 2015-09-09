@@ -6,7 +6,9 @@ function renderTime (time) {
   var minutes = Math.floor(time / 60)
   var seconds = time % 60
   if (seconds.toString().length === 1) seconds = '0' + seconds
-  window.time.innerHTML = minutes + ':' + seconds
+  time = minutes + ':' + seconds
+  window.time.innerHTML = time
+  document.title = time + ' - Pomodoro'
 }
 
 function toggleStatusIcon (pause) {
