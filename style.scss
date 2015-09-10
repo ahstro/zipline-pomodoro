@@ -75,6 +75,15 @@ div {
              color: $fg-color;
 }
 
+/* Auxiliary classes, used for Sass */
+
+.flex-center {
+  justify-content: center;
+          display: flex;
+}
+
+/* Media queries */
+
 @media (max-height: 24rem), (max-width: $max-side) {
   #timer {
     min-height: $mid-side;
@@ -122,10 +131,3 @@ div {
   }
 }
 
-
-/* Auxiliary classes, used for Sass */
-
-.flex-center {
-  justify-content: center;
-          display: flex;
-}
