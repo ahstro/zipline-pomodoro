@@ -109,6 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
   renderTime(activeTime)
   window.timer.addEventListener('click', toggleActive)
   window.reset.addEventListener('click', resetTimer)
+  window.skip.addEventListener('click', () => {
+    toggleType()
+    renderTime(activeTime)
+  })
 
   // Add in-/decrement click listeners
   Array.from(document.getElementsByClassName('timeControl'))
