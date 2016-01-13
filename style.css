@@ -1,0 +1,91 @@
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+html {
+  font-size: 16px;
+  height: 100%; }
+
+body {
+  background-color: #222;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'FantasqueSansMonoRegular', sans-serif;
+  font-size: 2rem;
+  margin: 0;
+  height: 100%;
+  color: #eee; }
+
+div {
+  cursor: pointer; }
+
+#timer {
+  justify-content: space-around;
+  flex-direction: column;
+  border-radius: 50%;
+  align-items: center;
+  min-height: 20rem;
+  min-width: 20rem;
+  display: flex;
+  border: 0.2rem solid #eee; }
+
+.big-text {
+  font-size: 5rem; }
+
+#buttons {
+  margin-top: 1rem;
+  width: 20rem; }
+
+#buttons > * {
+  flex-basis: 0;
+  flex-grow: 1; }
+
+.timeControl {
+  display: flex; }
+
+.timeControl > * {
+  padding: 0 .1rem; }
+
+::-moz-selection {
+  background-color: #222;
+  color: #eee; }
+
+::selection {
+  background-color: rgba(34, 34, 34, 0.9);
+  color: #eee; }
+
+/* Auxiliary classes, used for Sass */
+.flex-center, body, #buttons, #buttons > * {
+  justify-content: center;
+  display: flex; }
+
+/* Media queries */
+@media (max-height: 24rem), (max-width: 20rem) {
+  #timer {
+    min-height: 15rem;
+    min-width: 15rem; }
+
+  .big-text {
+    font-size: 3rem; }
+
+  #buttons {
+    width: 15rem; } }
+@media (max-height: 19rem) {
+  #buttons {
+    display: none; } }
+@media (max-height: 15rem), (max-width: 15rem) {
+  #tomato,
+  #statusIcon {
+    display: none; }
+
+  #timer {
+    min-height: 10rem;
+    min-width: 10rem; }
+
+  #buttons {
+    flex-direction: column; } }
+@media (max-height: 10rem), (max-width: 10rem) {
+  #timer {
+    border: none; }
+
+  .big-text {
+    font-size: 2rem; } }
